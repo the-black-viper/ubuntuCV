@@ -1,4 +1,27 @@
-FROM ubuntu:18.04
+FROM ubuntu:18.04 AS depends
+
+LABEL  maintainer="joshua javier"
+#Working build
+RUN apt-get update && apt-get install --download-only -y \
+      build-essential\
+      wget\
+      cmake\
+      git\
+      unzip\
+      git\
+      libgtk2.0-dev\
+      g++\
+      pkg-config\
+      libavcodec-dev\
+      libavformat-dev\
+      libswscale-dev\
+      libtbb2\
+      libtbb-dev\
+      libpng-dev\
+      libtiff-dev\
+      libjpeg-dev
+
+FROM ubuntu:18.04 AS build
 
 LABEL  maintainer="joshua javier"
 #Working build
