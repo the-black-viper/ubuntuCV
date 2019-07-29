@@ -23,7 +23,7 @@ RUN apt-get install -y \
       libtiff-dev\
       libjpeg-dev
       
-ENV OPENCV_VERSION='4.0.1'
+ENV OPENCV_VERSION='4.1.1'
 
 RUN cd /opt && \
   wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip && \
